@@ -1,0 +1,208 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/Credits.gd" type="Script" id=1]
+[ext_resource path="res://font/KronaOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/klik00.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/tlo.png" type="Texture" id=4]
+[ext_resource path="res://assets/glowa-lwa.jpg" type="Texture" id=5]
+[ext_resource path="res://logo_large_color_light.png" type="Texture" id=6]
+[ext_resource path="res://assets/dual_mountain_logo.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Fader.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=9]
+size = 57
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=11]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tlo" type="Sprite" parent="."]
+position = Vector2( 625, 356 )
+texture = ExtResource( 4 )
+
+[node name="Credits" type="Label" parent="."]
+anchor_top = 0.0277778
+anchor_right = 0.985156
+anchor_bottom = 0.127778
+margin_bottom = -7.62939e-06
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Credits"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Opis1" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 5.0
+margin_top = 124.0
+margin_right = -29.0
+margin_bottom = 199.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Idea, coding, graphics,
+    Sounds, Music, spiritual support,
+bringing sandwiches and beer"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Robert" type="Label" parent="."]
+margin_left = 445.0
+margin_top = 206.0
+margin_right = 862.0
+margin_bottom = 267.0
+rect_min_size = Vector2( 232, 0 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Robert Roróg"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Glowa-lwa" type="Sprite" parent="Robert"]
+position = Vector2( -38, 27 )
+scale = Vector2( 0.131455, 0.131455 )
+texture = ExtResource( 5 )
+
+[node name="Opis2" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 316.0
+margin_bottom = 391.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Remote code development support"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.511111
+anchor_right = 0.98125
+anchor_bottom = 0.577778
+margin_left = 530.0
+margin_top = -35.0
+margin_right = -403.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 0.0509804, 0.572549, 0.266667, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Ybaedbaenn
+Reedquist"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DualMountainLogo" type="Sprite" parent="Label"]
+position = Vector2( -46, 51 )
+scale = Vector2( 0.028808, 0.028808 )
+texture = ExtResource( 7 )
+
+[node name="Opis3" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 1.0
+margin_top = 492.0
+margin_right = -32.0
+margin_bottom = 567.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Alien Graphics, Sounds and scripts"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brak" type="Label" parent="."]
+margin_left = 367.0
+margin_top = 506.0
+margin_right = 882.0
+margin_bottom = 567.0
+rect_min_size = Vector2( 232, 0 )
+custom_colors/font_color = Color( 0.00784314, 0, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Were Not Used"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerBtnClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 1.27
+
+[node name="Fader" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="BtnBack" type="Button" parent="."]
+margin_left = 935.0
+margin_top = 23.0
+margin_right = 1114.93
+margin_bottom = 83.0
+custom_styles/focus = SubResource( 10 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BtnBack"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerBtnClick2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 1.27
+
+[node name="LogoLargeColorLight" type="Sprite" parent="."]
+position = Vector2( 626, 651 )
+scale = Vector2( 0.101563, 0.101563 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="BtnBack" to="." method="_on_BtnBack_pressed"]

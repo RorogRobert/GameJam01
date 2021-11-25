@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/yyee.wav-5f171557c91711d712634578d348ffbe.sample"
+
+[deps]
+
+source_file="res://assets/yyee.wav"
+dest_files=[ "res://.import/yyee.wav-5f171557c91711d712634578d348ffbe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

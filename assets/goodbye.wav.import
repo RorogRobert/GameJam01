@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/goodbye.wav-fc5d423307fd823659128786844c7246.sample"
+
+[deps]
+
+source_file="res://assets/goodbye.wav"
+dest_files=[ "res://.import/goodbye.wav-fc5d423307fd823659128786844c7246.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

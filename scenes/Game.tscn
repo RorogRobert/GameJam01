@@ -1,0 +1,410 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://scenes/Fader.tscn" type="PackedScene" id=1]
+[ext_resource path="res://font/KronaOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/Game.gd" type="Script" id=3]
+[ext_resource path="res://assets/klik00.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/yy.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/yye.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/mruu.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/yyee.wav" type="AudioStream" id=8]
+[ext_resource path="res://scenes/Muza.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=2]
+size = 61
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 62
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="DynamicFont" id=6]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 43
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "help"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 2.1, 3, 4.6, 6.1, 7.6, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="DynamicFont" id=13]
+size = 39
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.929412, 0.156863, 0.156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "popup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerBtnClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+pitch_scale = 1.27
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnTop" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.197222
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TitleWitch" type="ColorRect" parent="BtnTop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BtnTop/TitleWitch"]
+anchor_left = 0.00234375
+anchor_right = 0.999219
+anchor_bottom = 0.664286
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+text = "WHICH COLOR IS NOT RED?"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LabelLevel" type="Label" parent="BtnTop/TitleWitch"]
+anchor_left = 0.0131464
+anchor_top = 0.571429
+anchor_right = 0.32799
+anchor_bottom = 1.0
+margin_top = -7.62939e-06
+margin_right = -8.90582
+rect_min_size = Vector2( 403, 45 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "LEVEL: BEGINNER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LabelMaxSteps" type="Label" parent="BtnTop/TitleWitch"]
+anchor_left = 0.684487
+anchor_top = 0.571429
+anchor_right = 0.987139
+anchor_bottom = 1.0
+margin_top = -7.62939e-06
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "MAX STEPS: 10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="GridRectangle" type="GridContainer" parent="."]
+anchor_left = 0.0132813
+anchor_top = 0.327777
+anchor_right = 1.0
+anchor_bottom = 0.977777
+margin_left = 1.0
+margin_right = -17.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 10
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Transparent" type="ColorRect" parent="GridRectangle"]
+visible = false
+margin_right = 121.0
+margin_bottom = 473.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.0588235, 0.180392, 0.0666667, 0 )
+
+[node name="LabelCurrentStep" type="Label" parent="."]
+anchor_left = 0.0101562
+anchor_top = 0.202778
+anchor_right = 0.702344
+anchor_bottom = 0.322222
+custom_colors/font_color = Color( 0.0745098, 0.0666667, 0.0666667, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "CURRENT STEP 1/10"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BtnBack" type="Button" parent="."]
+margin_left = 1070.0
+margin_top = 158.0
+margin_right = 1249.93
+margin_bottom = 218.0
+custom_styles/focus = SubResource( 8 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BtnBack"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -90.0
+margin_top = -38.5
+margin_right = 90.0
+margin_bottom = 22.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="BtnBack"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -22.0
+margin_right = 0.0699463
+margin_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Change level"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerBtnYy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="PlayerBtnYye" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="PlayerBtnYyee" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="PlayerBtnMruu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="PopUpStart" type="ColorRect" parent="."]
+anchor_left = 0.1875
+anchor_top = 0.443056
+anchor_right = 0.8125
+anchor_bottom = 0.859722
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 400, 150 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="PopUpStart"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -138.0
+margin_bottom = -55.9998
+custom_fonts/font = SubResource( 10 )
+text = "Take a moment to think"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackIsNot" type="Label" parent="PopUpStart"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -20.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 10 )
+text = "Click the left mouse button
+to select the wrong color"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PopUpStart"]
+autoplay = "help"
+anims/RESET = SubResource( 16 )
+anims/help = SubResource( 17 )
+
+[node name="PopUp" type="ColorRect" parent="."]
+anchor_left = 0.1875
+anchor_top = 0.443056
+anchor_right = 0.8125
+anchor_bottom = 0.859722
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 400, 150 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="PopUp"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -135.0
+margin_bottom = -19.0
+custom_fonts/font = SubResource( 10 )
+text = "FAIL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackIsNot" type="Label" parent="PopUp"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -18.0
+margin_bottom = 98.0
+custom_fonts/font = SubResource( 10 )
+text = "BLACK IS NOT RED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnPopUpClose" type="Button" parent="PopUp"]
+margin_left = 744.0
+margin_top = -13.0
+margin_right = 804.0
+margin_bottom = 43.0
+custom_colors/font_color = Color( 0.968627, 1, 0.0117647, 1 )
+custom_fonts/font = SubResource( 13 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayerPopUp" type="AnimationPlayer" parent="PopUp"]
+anims/RESET = SubResource( 18 )
+anims/popup = SubResource( 19 )
+
+[node name="Fader" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="Control" parent="." instance=ExtResource( 9 )]
+mouse_filter = 2
+
+[connection signal="pressed" from="BtnTop" to="." method="_on_BtnTop_pressed"]
+[connection signal="pressed" from="BtnBack" to="." method="_on_BtnBack_pressed"]
+[connection signal="pressed" from="PopUp/btnPopUpClose" to="." method="_on_btnPopUpClose_pressed"]
